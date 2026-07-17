@@ -1,0 +1,111 @@
+.promotions-main {
+  min-height: 100vh;
+  .banner-section {
+    background-color: #f5f5f7;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 20px;
+    .page-name {
+      max-width: 900px;
+      margin: auto;
+      margin-top: 50px;
+      width: 100%;
+      border-bottom: 1px solid lightgrey;
+      h6 {
+        text-align: left;
+        max-width: 100%;
+        font-weight: 600;
+      }
+    }
+    h2 {
+      text-align: center;
+      font-weight: 600;
+      background: linear-gradient(
+        to right,
+        #3a9486,
+        #c2c43d,
+        #f5ab28,
+        #f35b5e,
+        #5e7ed6
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h6 {
+      max-width: 500px;
+      text-align: center;
+      font-weight: 300;
+      font-size: 20px;
+    }
+    a {
+      color: #0066cc;
+    }
+  }
+  .slider-section {
+    background: white;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 15px;
+    .swiper {
+      // width: 100%;
+      .swiper-wrapper {
+        width: 100% !important;
+      }
+      .swiper-slide {
+        width: 100% !important;
+        flex-shrink: 0 !important;
+      }
+    }
+    .max-w-slider {
+      max-width: 2000px;
+      margin-top: 200px;
+    }
+    .single-promotion {
+      position: relative;
+      max-width: 336px;
+      background: #f5f5f7;
+      border-radius: 15px;
+      min-height: 10vh;
+      img {
+        position: absolute;
+        top: -250px;
+      }
+      .content-section {
+        padding-top: 100px !important;
+        padding: 15px;
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        flex-direction: column;
+        gap: 20px;
+      }
+      h6 {
+        margin: 0;
+        font-weight: 500;
+        font-size: 15px;
+      }
+      h6 {
+        span {
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .slider-section {
+    align-items: start !important;
+  }
+}

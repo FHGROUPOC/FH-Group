@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/assets/*": ["./public/assets/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/layouts/*": ["./src/layouts/*"],
+      "@/data/*": ["./src/data/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/helpers/*": ["./src/helpers/*"],
+      "@/plugins/*": ["./src/plugins/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/portfolio/Portfolio.jsx", "src/components/details/PortfolioDetailsArea.jsx", "src/data/service_data.js", "src/layouts/footers/FooterOne.jsx", "src/components/service/ServiceHomeOne.jsx", "src/components/brand/BrandHomeOne.tsx", "src/app/team_new/page.jsx", "src/components/portfolio/PortfolioHomeFive.tsx", "src/components/modals/VideoPopup.tsx", "src/components/animations/Animations.jsx", "src/components/testimonial/TestimonialNew.jsx", "src/components/details/BlogDetails.jsx", "src/data/sblog_data.js", "src/components/blog/BlogArea.jsx", "src/app/nextjs/page.jsx", "src/components/blog/GatewayBlogHomeTwo.tsx"],
+  "exclude": ["node_modules"]
+}

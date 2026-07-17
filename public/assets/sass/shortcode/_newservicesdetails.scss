@@ -1,0 +1,129 @@
+.new-services-main {
+  padding: 200px 10px 150px 10px;
+  .basic-details-section {
+    .content {
+      h6 {
+        font-weight: 400;
+      }
+      h1 {
+        font-size: 110px;
+      }
+      .paragraph-content {
+        margin: auto;
+      }
+    }
+    .main-image {
+      margin: 50px 0px;
+      width: 100%;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .services-points-section {
+    ul {
+      margin: 0px;
+      li {
+        font-weight: 500;
+      }
+    }
+    .service-details-intro {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 25px;
+      .more-service-option {
+        position: relative;
+        min-width: 430px;
+        min-height: 660px;
+        padding: 60px 30px;
+        border-radius: 10px;
+        background: #f5f7f5;
+        .side-text {
+          position: absolute;
+          top: 150px;
+          right: -116px;
+          background: white;
+          padding: 10px;
+          transform: rotate(90deg);
+          h6 {
+            font-size: 15px;
+            letter-spacing: 4px;
+            margin: 0;
+          }
+        }
+        .other-services {
+          display: flex;
+          align-items: start;
+          justify-content: start;
+          flex-direction: column;
+          gap: 10px;
+          a {
+            padding: 4px 16px;
+            border-radius: 20px;
+            border: 1px solid #313131;
+            background: transparent;
+            font-size: 14px;
+            text-transform: uppercase;
+          }
+          a:hover {
+            background: #313131;
+            color: white;
+          }
+        }
+        .small-detail {
+          max-width: 400px;
+          padding-top: 60px;
+          h3 {
+            font-weight: 500;
+            text-transform: uppercase;
+          }
+          .contact-btn {
+            padding: 4px 16px;
+            border-radius: 20px;
+            border: 1px solid #313131;
+            background: #313131;
+            color: white;
+          }
+          .contact-btn:hover {
+            background: transparent;
+            color: #313131;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .new-services-main {
+    .basic-details-section {
+      .content {
+        h1 {
+          font-size: 50px;
+        }
+      }
+      .main-image {
+        img {
+          min-height: 40vh;
+          object-fit: cover;
+        }
+      }
+    }
+    .service-details-intro {
+      .more-service-option {
+        display: none;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .new-services-main {
+    .services-points-section {
+      .service-details-intro {
+        align-items: start !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  // transition: all 0.3s ease-in-out;
+}
+.greenbox {
+  background-color: hsl(120, 100%, 85%);
+  padding: 1rem;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 4.5rem;
+  border-radius: 18px;
+  color: hsl(120, 100%, 20%);
+  padding: 0 1rem;
+  font-size: 0.6rem;
+}
+.smp-sub {
+  font-size: 0.9rem;
+  color: hsl(0, 0%, 40%);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.main-smp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2rem;
+  padding: 20px;
+
+  .smp-box {
+    background-color: hsla(240, 100%, 97%, 0.9);
+    width: fit-content;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 18px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .smp-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 18px;
+    padding: 2px;
+    background: linear-gradient(
+      to bottom right,
+      #ff6b81,
+      #ff9f43,
+      #ffc87c,
+      #8ec2f2,
+      #5c4ee8
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    /* The key change: Initially set opacity to 0 */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* Transition for the opacity change */
+  }
+
+  .smp-box:hover::before {
+    /* The key change: On hover, set opacity to 1 */
+    opacity: 1;
+  }
+  .smp-header {
+    background: #ffffff;
+    border-radius: 0 0 34px 34px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 6px;
+    padding: 1rem;
+    width: 100%;
+  }
+  .smp-title {
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .smp-name-f {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .smp-name-l {
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+  .smp-req {
+    font-size: 0.8rem;
+    color: hsl(0, 0%, 50%);
+    margin-bottom: 1.5rem;
+  }
+  .smp-cta {
+    padding: 0.2rem 1.2rem;
+    height: 100%;
+    border: 1.5px solid hsl(240, 100%, 70%);
+    background-color: white;
+    border-radius: 72px;
+    box-sizing: border-box;
+  }
+  .smp-cta:hover {
+    transition: all 0.3s ease-in-out;
+    border: 1.5px solid transparent;
+    background-color: hsl(240, 100%, 70%);
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+  .price-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .dollar {
+    font-size: 0.8rem;
+    color: hsl(0, 0%, 10%);
+    margin-top: 0.5rem;
+  }
+  .smp-price {
+    font-weight: 500;
+    font-size: 1.3rem;
+  }
+  .mo {
+    font-size: 0.8rem;
+    color: hsl(0, 0%, 50%);
+  }
+  .pause {
+    font-size: 0.6rem;
+    color: hsl(0, 0%, 50%);
+  }
+  ul {
+    list-style: none; /* Removes the default bullet points */
+    padding-left: 0;
+    padding: 1rem;
+    li {
+      position: relative; /* Allows positioning of the pseudo-element */
+      padding-left: 1.5em;
+      color: hsl(240, 100%, 80%);
+      font-size: 0.9rem; /* Creates space for the custom marker */
+    }
+    li::before {
+      content: "✓"; /* Inserts the checkmark symbol */
+      position: absolute;
+      left: 0; /* Positions the checkmark at the start of the padding */
+      color: hsl(120, 100%, 80%); /* Sets the color of the checkmark */
+    }
+  }
+}

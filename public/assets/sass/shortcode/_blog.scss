@@ -1,0 +1,101 @@
+/*--------------------------------------------------------------
+30. Blog
+----------------------------------------------------------------*/
+
+.cs_blog.cs_style_1 {
+  .cs_blog_info {
+    margin-top: 30px;
+  }
+  .cs_blog_subtitle {
+    color: var(--body-color);
+  }
+  &:hover .cs_blog_title {
+    transition: all 0.5s;
+    color: $accent;
+  }
+}
+
+.cs_andrew_jackson {
+  padding: 90px 100px;
+  .cs_andrew_jackson_text_body {
+    font-style: italic;
+    line-height: 39px;
+  }
+  .cs_footer_text.cs_color_1 {
+    color: $border;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .cs_andrew_jackson {
+    padding: 60px 10px;
+    font-size: 18px;
+  }
+  .cs_share_post {
+    gap: 30px;
+    justify-content: center;
+  }
+}
+
+/*--------------------------------------------------------------
+Home Blog
+----------------------------------------------------------------*/
+
+.home-blogs-main {
+  max-width: 1650px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 100px;
+  h6,
+  h3 {
+    margin: 0;
+  }
+  h6 {
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .all-blogs {
+    margin-top: 40px;
+    .single-blog {
+      padding: 10px;
+      width: 100%;
+      display: flex;
+      align-items: start;
+      justify-content: start;
+      flex-direction: column;
+      gap: 10px;
+      img {
+        min-height: 290px;
+        max-height: 290px;
+        object-fit: cover;
+      }
+      .content {
+        text-align: left;
+        .date-author {
+          color: $accent;
+          .h6 {
+            color: $accent;
+            font-size: 17px;
+            margin: 0px;
+          }
+        }
+        .h5 {
+          margin: 10px 0px;
+          transition: 0.5s ease-in-out;
+        }
+        a:hover .h5 {
+          color: $accent;
+        }
+        
+        p {
+          line-height: 1.4;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+Home Blog
+----------------------------------------------------------------*/

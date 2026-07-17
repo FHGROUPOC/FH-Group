@@ -1,0 +1,1 @@
+export const DBcon = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASS}@cluster0.ty3qc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
