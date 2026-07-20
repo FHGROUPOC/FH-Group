@@ -16,17 +16,23 @@ const BlogHomeOne = ({ style_2, style_3 }: any) => {
   useEffect(() => {
     const myfun = async () => {
       try {
-        const data = await fetch('/api/blogs');
-        const jsondata  =await data.json();
-        const filtered = jsondata?.filter((items:any)=>items.status==='Approved')
-        setblog_data(filtered)
+        // 1. Check if we have an environment variable, fallback to Vercel's system variable, or default to a relative path
+        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL 
+          ? process.env.NEXT_PUBLIC_SITE_URL 
+          : process.env.VERCEL_URL 
+            ? `https://${process.env.VERCEL_URL}` 
+            : ''; // Falls back to standard relative path on the actual client side
+
+        const data = await fetch(`${baseUrl}/api/blogs`);
+        const jsondata = await data.json();
+        const filtered = jsondata?.filter((items: any) => items.status === 'Approved');
+        setblog_data(filtered);
       } catch (error) {
-        console.log('something went wrong with db')
+        console.log('something went wrong with db', error);
       }
-   
-    }
+    };
     myfun();
-  }, [])
+  }, []);
 
   return (
     <>
