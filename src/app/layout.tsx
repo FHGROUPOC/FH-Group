@@ -1,10 +1,11 @@
+// @ts-expect-error - SCSS imports are handled by Next.js
 import "@/styles/index.scss";
 import Wrapper from "@/components/SessionWrapper/Wrapper";
 import { Metadata } from "next";
 import Script from "next/script";
 import { Inter_Tight, Kanit } from "next/font/google";
 
-// Using Next.js Font Optimization
+// Next.js Font Optimization
 const interTight = Inter_Tight({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "900"],
@@ -80,15 +81,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${interTight.variable} ${kanit.variable}`}>
-      <body className={`${interTight.className} ${kanit.className}`}>
+      {/* Set primary font class on body */}
+      <body className={interTight.className}>
         
-        {/* =========================================================
-           VOX BRIDGE CUSTOM VOICE WIDGET INTEGRATION
-           ========================================================= */}
+        {/* Vox Bridge Voice Widget */}
         <Script
           src="https://voxbbridge-demo-production.up.railway.app/widget.js"
           data-client-id="j97asdqv8wnxhenwr4qczzwkj58akny4"
-          strategy="afterInteractive" // Safely loads right after page becomes interactive
+          strategy="afterInteractive"
         />
 
         {/* Google Analytics (Gtag) */}
@@ -140,7 +140,7 @@ export default function RootLayout({
         {/* Google AdSense */}
         <Script
           async
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3092206730918791"
           crossOrigin="anonymous"
         />
