@@ -1,26 +1,35 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
-
-
-
-
+import Image from "next/image";
 
 const PortfolioHomeOne = () => {
+  const [data, setdata] = useState<any[]>([]);
 
-  const [data,setdata] = useState([]);
+  useEffect(() => {
+    const myfun = async () => {
+      try {
+        const response = await fetch(`/api/clients`);
+        const resData = await response.json();
 
-  useEffect(()=>{
+        // Check if resData is actually an array before filtering
+        if (Array.isArray(resData)) {
+          const filterdata = resData
+            .filter((item: any) => item.status === 'Approved')
+            .reverse();
+          setdata(filterdata);
+        } else {
+          console.error("API did not return an array:", resData);
+          setdata([]);
+        }
+      } catch (error) {
+        console.error("Failed to fetch clients:", error);
+        setdata([]);
+      }
+    };
 
-    const myfun =async()=>{
-      const data = await (await fetch(`/api/clients`)).json();
-      const filterdata = await data?.filter((items:any)=>items.status==='Approved')?.reverse();
-  setdata(filterdata)
-    }
-myfun()
-  },[])
-
+    myfun();
+  }, []);
 
   return (
     <>
@@ -44,21 +53,18 @@ myfun()
         </div>
         <div>
           <div className="center wrap w-98 m-auto">
-            {data?.map((item:any, i:any) => (
-              <>
-             <Link href={`/client/${item?.slug}`}>  <Image
-                  className="working_on_it_img"
-                  width={320}
-                  height={418}
-                  src={item.mainimg}
-                  alt={item.title}
-                />
-                </Link> 
-                {/* <div className="">
-                <h2 className="">{item.title}</h2>
-                <div className="cs_portfolio_subtitle">{item.category}</div>
-              </div> */}
-              </>
+            {data?.map((item: any, i: any) => (
+              <React.Fragment key={item?._id || i}>
+                <Link href={`/client/${item?.slug}`}>
+                  <Image
+                    className="working_on_it_img"
+                    width={320}
+                    height={418}
+                    src={item.mainimg}
+                    alt={item.title || "Client project"}
+                  />
+                </Link>
+              </React.Fragment>
             ))}
           </div>
         </div>
