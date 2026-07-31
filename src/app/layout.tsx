@@ -85,11 +85,11 @@ export default function RootLayout({
       <body className={interTight.className}>
         
         {/* Vox Bridge Voice Widget */}
-        <Script
+        {/*<Script
           src="https://voxbbridge-demo-production.up.railway.app/widget.js"
           data-client-id="j97asdqv8wnxhenwr4qczzwkj58akny4"
           strategy="afterInteractive"
-        />
+        />*?}
 
         {/* Google Analytics (Gtag) */}
         <Script
